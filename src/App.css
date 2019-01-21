@@ -1,32 +1,203 @@
-.App {
-  text-align: center;
+:root{
+  --input-border-Left-Btm: 4px solid #ffffff5a;
+  --input-anim-border-left: 4px solid #ffff35;
+  --input-anim-border-btm: 4px solid #70c9ec;  
+  --transish: all 0.2s ease;  
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* header */
+header{
+  width: 600px;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header h2{ 
+  padding: .6rem;
+  font-size: 3rem; 
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 8px #444444;
+  font-family: 'Staatliches', cursive;
+  -webkit-text-stroke: .2px #cccccc;
 }
 
-.App-link {
-  color: #61dafb;
+
+header i{
+  font-size: 2.5rem;
+  color: #70b4bd;
+  -webkit-text-stroke: .2px #86f1ff;
+  text-shadow: 0 2px 8px #1f464a;
+  font-family: 'Oleo Script', cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* main */
+main{
+  position: relative;
+  margin: 0 auto;
+  width: 840px;
+  background: #ffffff8a;
+  padding: 20px 16px;
+  border-radius: 20px 3.5rem;
+  border: 2px solid #cecece;
+  box-shadow: 0 2px 8px #222222aa;
+  overflow: hidden;
+}
+
+/* render output */
+main .output{
+  height: 380px;
+  padding: 8px;
+  float: right;
+  width: 400px;
+  background: #ececec;
+  box-shadow: 0 2px 8px #444444;
+  border: 2px solid #cccccc;
+  border-radius: 20px;
+}
+
+main .box{
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  width: 260px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 560%);
+  border: 2px solid #eeeeee;
+  background: #7ec7e4;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 0 8px #777777, 0 0 4px #888888;
+}
+
+/* icons */
+i.material-icons{
+  font-size: 1rem; 
+  display: block;
+  float: left;
+  padding: .1rem .4rem;
+}
+
+/* bg gradient opacity */
+.bg-opacity{
+  z-index: -1;
+  background: linear-gradient(to right top, #ff6c6cac 20%, #76ffe66a 40%, #9b209b8a 80%, #fff017aa);
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* textarea */
+textarea{
+  font-size: 1.4rem;
+  border: 0;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  outline: none;
+  height: 320px;
+  width: 90%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* form */
+.form-wrap{
+  background: #cececec0;
+  width: 400px;
+  float: left;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px #444444;
+  border: 2px solid #eeeeee;
+}
+
+.form-wrap div{
+  padding: .6rem 2rem 1rem;
+}
+
+/* label */
+.form-wrap div label{
+  display: block;
+  background: linear-gradient(to top, #aaaaaa , #eeeeee);
+  width: 280px;
+  padding: .6rem .4rem;
+  border-radius: 20px 0 20px 0;
+  border-top: 4px solid #cccccc;
+  border-right: 4px solid #aaaaaa;
+  color: #777777;
+  box-shadow: 0 0 4px #aaaaaa;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* input */
+.form-wrap div input[type=text]{
+  box-shadow: 0 2px 8px #888888;
+  border-radius: 0 0 0 10px;
+  color: #ffffff;
+  outline: 0;
+  padding: .4rem 0;
+  text-indent: 10px;
+  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  border: 0;
+  background: #86f1ff5a;
+  border-bottom: var(--input-border-Left-Btm);
+  border-left: var(--input-border-Left-Btm);
+  transition: var(--transish);
+}
+
+/* input placeholder */
+.form-wrap div input[type=text]::placeholder{
+  color: #ffffff;
+  text-shadow: 0 1px 4px #444444;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* input focus */
+.form-wrap div input[type=text]:focus{
+  border-left: var(--input-anim-border-left);
+  border-bottom: var(--input-anim-border-btm);
+}
+
+/* btn */
+.form-wrap div .btn{
+  font-family: 'Montserrat', sans-serif;
+  border: 0;
+  padding: 10px;
+  margin-left: 1rem;
+  border-radius: 10px;
+  color: #888888;
+  background: #eeeeee;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px #888888;
+  border: 1px solid #aaaaaa;
+  cursor: pointer;
+  outline: 0;
+  transition: var(--transish); 
+}
+
+/* btn focus & hover */
+.form-wrap div .btn:focus{
+  background: #aaaaaa;
+  border: 1px solid #dddddd;
+  color: #ffffff;
+}
+
+.form-wrap div .btn:hover{
+  background: skyblue;
+  border: 1px solid #5195af;
+  color: #ffffff;
+}
+
+a{
+  color: #047dad;
+  text-shadow: 0 0 0 #000 !important;
+  -webkit-text-stroke: .1px #61dafb;
 }
